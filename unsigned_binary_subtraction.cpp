@@ -1,4 +1,3 @@
-//Unsigned binary subtraction
 #include<iostream>
 using namespace std;
 
@@ -25,14 +24,14 @@ int main()
 
     int carry=sub(minude,subtrahend,diff,n); 
     cout<<"Difference is:";
-    if(carry==1)
+    if(carry==1) //Minude is grater than subtrahend
     {
         for(int i=0;i<n;i++)
         {
             cout<<diff[i];
         }
     }
-    else
+    else // Subtrahend is grater than minude
     {
         int *negatives=new int[n];
         get_twos_complement(diff,negatives,n);
@@ -46,7 +45,7 @@ int main()
     cout<<endl;
     return 0;
 }
-
+// Addition fucntion
 int addb(int *binary1,int *binary2,int *sum,int n)
 {
     int carry=0;
@@ -58,15 +57,15 @@ int addb(int *binary1,int *binary2,int *sum,int n)
     }
     return carry;
 }
-
+// Two's complement fucntion
 void get_twos_complement(int *subtrahend,int *twos_complement,int n)
 {
-    int *ones_complement=new int[n];
+    int *ones_complement=new int[n];// to get one's complement
     for(int i=0;i<n;i++)
     {
         ones_complement[i]=(subtrahend[i]==0)?1:0;
     }
-    int *one=new int[n];
+    int *one=new int[n];// for 1 value uses to get two'complement 
     for(int i=0;i<n-1;i++)
     {
         one[i]=0;
@@ -75,7 +74,7 @@ void get_twos_complement(int *subtrahend,int *twos_complement,int n)
 
     addb(ones_complement,one,twos_complement,n);
 }
-
+// Subtration fuction
 int sub(int *minude,int*subtrahend,int*diff,int n)
 {
     int *twos_complement=new int[n];

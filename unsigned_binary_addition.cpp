@@ -1,4 +1,3 @@
-//Unsigned binary addition
 #include<iostream>
 using namespace std;
 
@@ -21,7 +20,7 @@ int main()
         cin>>binary2[i];
     }
 
-    int carry=addb(binary1,binary2,sum,n);
+    int carry=addb(binary1,binary2,sum,n); 
     cout<<"sum:";
     for(int i=0;i<n;i++)
     {
