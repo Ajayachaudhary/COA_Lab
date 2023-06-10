@@ -21,7 +21,7 @@ long long decimal_to_binary(long long decimal)
     while (decimal!=0)
     {
         remainder=decimal%2;
-        binary+=remainder*weight;
+        binary+=remainder*weight;//binary=binary+remainder*weight
         decimal/=2; //binary=binary/10;
         weight*=10;  //weight=weight*2;
     }
