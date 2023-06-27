@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int addb(int [],int [],int [],int);
+int addb(int [],int [],int [],int); // addb(int*, int*, int*, int);
 
 int main()
 {
@@ -36,8 +36,7 @@ int addb(int *binary1,int *binary2,int *sum,int n)
     for(int i=n-1;i>=0;i--)
     {
         sum[i]=(binary1[i]+binary2[i]+carry)%2;
-        carry=(binary1[i]+binary2[i]+carry)/2;
-
+        carry=(binary1[i]+binary2[i]+carry)/2; 
     }
     return carry;
 }
