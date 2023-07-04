@@ -73,14 +73,7 @@ void addb(int *multiplicand, int *multiplier, int *result,int n,int m, int c)
     
     for(i=m-1; i>=0; i--)
     {
-        for(k=0; k<1; k++)// shifting value backward by 1 step
-            {
-                 for(l=0; l<a-1; l++)
-                    {
-                      result[l] = result[l+1];
-                    }
-                    result[a-1] = 0;
-            }
+        
         if(multiplier[i] == 1)
         {
             int carry=0;
@@ -91,5 +84,13 @@ void addb(int *multiplicand, int *multiplier, int *result,int n,int m, int c)
                  carry = temp/2;
             }
         }
+        for(k=0; k<1; k++)// shifting value backward by 1 step
+            {
+                 for(l=0; l<a-1; l++)
+                    {
+                      multiplicand1[l] = multiplicand1[l+1];
+                    }
+                    multiplicand1[a-1] = 0;
+            }
     }
 }
